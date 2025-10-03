@@ -38,6 +38,13 @@ public class Dns {
     }
 
 
+    @param nom NomMachine
+     * @return DnsItem correspondant ou null si inexistant
+     */
+    public DnsItem getItem(NomMachine nom) {
+        return nomToItem.get(nom.getNom());
+    } 
+
 
     
 
