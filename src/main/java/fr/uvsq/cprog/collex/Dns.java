@@ -46,6 +46,14 @@ public class Dns {
     } 
 
 
+    @param ip AdresseIP
+     * @return DnsItem correspondant ou null si inexistant
+     */
+    public DnsItem getItem(AdresseIP ip) {
+        return ipToItem.get(ip.getIp());
+    } 
+
+
     
 
 
