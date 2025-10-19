@@ -54,6 +54,20 @@ public class Dns {
     } 
 
 
+     @param domaine nom du domaine (ex: "uvsq.fr")
+     * @return liste des DnsItem correspondant
+     */
+    public List<DnsItem> getItems(String domaine) {
+        List<DnsItem> result = new ArrayList<>();
+        for (DnsItem item : nomToItem.values()) {
+            if (item.getNomMachine().getDomaine().equals(domaine)) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
+
     
 
 
