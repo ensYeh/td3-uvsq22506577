@@ -86,6 +86,14 @@ public class Dns {
         nomToItem.put(nom.getNom(), item);
         ipToItem.put(ip.getIp(), item);
 
+        List<String> lines = new ArrayList<>();
+        for (DnsItem i : nomToItem.values()) {
+            lines.add(i.getNomMachine().getNom() + " " + i.getAdresseIP().getIp());
+        }
+        Files.write(filePath, lines);
+    }
+}
+
 
 
 
