@@ -10,9 +10,11 @@ public class Dns {
      private Map<String, DnsItem> nomToItem; 
     private Map<String, DnsItem> ipToItem;  
     private Path filePath;
+    /** 
     
-       @param fileName nom du fichier de stockage
+     *  @param fileName nom du fichier de stockage
      * @throws IOException si problème de lecture
+      */
      
     public Dns(String fileName) throws IOException {
         this.filePath = Paths.get(fileName);
@@ -37,7 +39,7 @@ public class Dns {
         }
     }
 
-
+/** 
     @param nom NomMachine
      * @return DnsItem correspondant ou null si inexistant
      */
@@ -45,15 +47,15 @@ public class Dns {
         return nomToItem.get(nom.getNom());
     } 
 
-
-    @param ip AdresseIP
-     * @return DnsItem correspondant ou null si inexistant
+/** 
+   * @param ip AdresseIP
+   * @return DnsItem correspondant ou null si inexistant
      */
     public DnsItem getItem(AdresseIP ip) {
         return ipToItem.get(ip.getIp());
     } 
 
-
+/** 
      @param domaine nom du domaine (ex: "uvsq.fr")
      * @return liste des DnsItem correspondant
      */
@@ -67,12 +69,12 @@ public class Dns {
         return result;
     }
 
-
+/** 
     @param ip AdresseIP à ajouter
      * @param nom NomMachine à ajouter
      * @throws IOException si problème  
      * @throws IllegalArgumentException si le nom ou IP existe déjà
-     
+    */ 
     public void addItem(AdresseIP ip, NomMachine nom) throws IOException {
         
         if (nomToItem.containsKey(nom.getNom())) {
@@ -101,4 +103,4 @@ public class Dns {
 
 
 
-}
+

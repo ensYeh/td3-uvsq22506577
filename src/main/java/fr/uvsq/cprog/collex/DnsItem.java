@@ -16,9 +16,12 @@ public class DnsItem {
     public NomMachine getNomMachine() {
         return nomMachine;
     }
+    public AdresseIP getAdresseIP() {
+        return ip;
+    }
 
     @Override
     public String toString() {
-        return ip + " " + nomMachine;
+       return nomMachine.getNom() + " " + ip.getIp();
     }
 }

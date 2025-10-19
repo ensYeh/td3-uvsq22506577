@@ -1,6 +1,6 @@
 package fr.uvsq.cprog.collex;
 
-public class RechercheIP implements Commande {
+public class RechercherIP implements Commande {
     private String nomMachine;
     private Dns dns;
 
