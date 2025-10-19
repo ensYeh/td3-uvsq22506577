@@ -4,7 +4,7 @@ public class RechercherNom implements Commande {
     private AdresseIP adresse;
     private Dns dns;
 
-    public RechercheNom(Dns dns, AdresseIP adresse) {
+    public RechercherNom(Dns dns, AdresseIP adresse) {
         this.dns = dns;
         this.adresse = adresse;
     }

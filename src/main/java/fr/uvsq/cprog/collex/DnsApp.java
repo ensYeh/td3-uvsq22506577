@@ -1,6 +1,7 @@
 package fr.uvsq.cprog.collex;
 
 import java.util.Scanner;
+import java.io.IOException;
 
 public class DnsApp {
     private Dns dns;
@@ -11,7 +12,7 @@ public class DnsApp {
         this.tui = tui;
     }
 
-    public void run() {
+    public void run() throws IOException { 
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("> ");
@@ -22,9 +23,13 @@ public class DnsApp {
     }
 
     public static void main(String[] args) {
-        Dns dns = new Dns("dns.txt"); // nom du fichier à adapter
+        try{
+        Dns dns = new Dns("dns.txt"); 
         DnsTUI tui = new DnsTUI(dns);
         DnsApp app = new DnsApp(dns, tui);
         app.run();
-    }
+    } catch (IOException e) {
+            System.out.println("Erreur lors du chargement du fichier DNS : " + e.getMessage());
+        }
+}
 }

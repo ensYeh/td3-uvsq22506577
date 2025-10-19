@@ -4,7 +4,7 @@ public class RechercherIP implements Commande {
     private String nomMachine;
     private Dns dns;
 
-    public RechercheIP(Dns dns, String nomMachine) {
+    public RechercherIP(Dns dns, String nomMachine) {
         this.dns = dns;
         this.nomMachine = nomMachine;
     }

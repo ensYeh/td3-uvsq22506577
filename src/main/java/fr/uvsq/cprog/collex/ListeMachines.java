@@ -14,10 +14,12 @@ public class ListeMachines implements Commande {
     }
 
     @Override
-    public void execute() {
-        List<DnsItem> items = dns.getItems(domaine);
-        items.stream()
-             .sorted((i1, i2) -> trierParIP ? i1.getAdresseIP().compareTo(i2.getAdresseIP()) : i1.getNomMachine().compareTo(i2.getNomMachine()))
-             .forEach(i -> System.out.println(i.getAdresseIP() + " " + i.getNomMachine()));
-    }
+public void execute() {
+    List<DnsItem> items = dns.getItems(domaine);
+    items.stream()
+         .sorted((i1, i2) -> trierParIP ? 
+             i1.getAdresseIP().getIp().compareTo(i2.getAdresseIP().getIp()) :
+             i1.getNomMachine().getNom().compareTo(i2.getNomMachine().getNom()))
+         .forEach(i -> System.out.println(i.getAdresseIP() + " " + i.getNomMachine()));
+}
 }

@@ -32,7 +32,7 @@ public class Dns {
             if (parts.length == 2) {
                 NomMachine nom = new NomMachine(parts[0]);
                 AdresseIP ip = new AdresseIP(parts[1]);
-                DnsItem item = new DnsItem(nom, ip);
+                DnsItem item = new DnsItem(ip, nom);
                 nomToItem.put(parts[0], item); 
                 ipToItem.put(parts[1], item);  
             }
@@ -84,7 +84,7 @@ public class Dns {
             throw new IllegalArgumentException("ERREUR : L'adresse IP existe déjà !");
         }
 
- DnsItem item = new DnsItem(nom, ip);
+ DnsItem item = new DnsItem(ip, nom);
         nomToItem.put(nom.getNom(), item);
         ipToItem.put(ip.getIp(), item);
 

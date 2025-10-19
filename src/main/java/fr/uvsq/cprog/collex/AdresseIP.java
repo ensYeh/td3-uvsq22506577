@@ -1,6 +1,6 @@
 package fr.uvsq.cprog.collex;
 
-public class AdressIP {
+public class AdresseIP {
     private final String ip;
 
     public AdresseIP(String ip) {
