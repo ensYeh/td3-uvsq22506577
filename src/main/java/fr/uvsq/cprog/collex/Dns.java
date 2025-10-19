@@ -68,8 +68,19 @@ public class Dns {
     }
 
 
-    
-
+    @param ip AdresseIP à ajouter
+     * @param nom NomMachine à ajouter
+     * @throws IOException si problème  
+     * @throws IllegalArgumentException si le nom ou IP existe déjà
+     
+    public void addItem(AdresseIP ip, NomMachine nom) throws IOException {
+        
+        if (nomToItem.containsKey(nom.getNom())) {
+            throw new IllegalArgumentException("ERREUR : Le nom de machine existe déjà !");
+        }
+        if (ipToItem.containsKey(ip.getIp())) {
+            throw new IllegalArgumentException("ERREUR : L'adresse IP existe déjà !");
+        }
 
 
 
