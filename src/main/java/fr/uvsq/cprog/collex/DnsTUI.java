@@ -1,4 +1,4 @@
-package fr.uvsq.cprog;
+package fr.uvsq.cprog.collex;
 import java.util.Scanner;
 
 public class DnsTUI {
