@@ -82,7 +82,9 @@ public class Dns {
             throw new IllegalArgumentException("ERREUR : L'adresse IP existe déjà !");
         }
 
-
+ DnsItem item = new DnsItem(nom, ip);
+        nomToItem.put(nom.getNom(), item);
+        ipToItem.put(ip.getIp(), item);
 
 
 
